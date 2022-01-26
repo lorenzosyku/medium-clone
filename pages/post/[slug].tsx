@@ -90,7 +90,7 @@ function Post({ post }: Props) {
         <label className="block mb-5">
           <span className="text-gray-700">Name</span>
           <input
-            {...(register("name"), { required: true })}
+            {...register("name", { required: true })}
             className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-yellow-500 outline-none focus:ring"
             placeholder="Guxhi Muxhi"
             type="text"
@@ -99,18 +99,18 @@ function Post({ post }: Props) {
         <label className="block mb-5">
           <span className="text-gray-700">Email</span>
           <input
-            {...(register("email"), { required: true })}
+            {...register("email", { required: true })}
             className="shadow border rounded py-2 px-3 form-input mt-1 block w-full ring-yellow-500 outline-none focus:ring"
-            placeholder="Guxhi Muxhi"
+            placeholder="GuxhiMuxhi@gmail.com"
             type="email"
           />
         </label>
         <label className="block mb-5">
           <span className="text-gray-700">Commment</span>
           <textarea
-            {...(register("comment"), { required: true })}
+            {...register("comment", { required: true })}
             className="shadow border rounded py-2 px-3 form-textarea mt-1 block w-full ring-yellow-500 outline-none focus:ring"
-            placeholder="Guxhi Muxhi"
+            placeholder="Great article!!"
             rows={8}
           />
         </label>
