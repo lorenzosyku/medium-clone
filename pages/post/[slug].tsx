@@ -1,4 +1,4 @@
-import { GetStaticProps } from "next";
+import { GetStaticPaths, GetStaticProps } from "next";
 import Header from "../../components/Header";
 import { sanityClient, urlFor } from "../../sanity";
 import { Post } from "../../typing";
@@ -18,19 +18,18 @@ function Post({ post }: Props) {
 
 export default Post;
 
-export const getStaticPaths = async () => {
-  const query = `*[_type == "post"]{
-    _id,
-    slug-> {
-    current
-    }
-  }`;
+export const getStaticPaths: GetStaticPaths = async () => {
+  const query = `*[_type=="post"]{
+        _id,
+        slug {
+            current
+        }
+      }`;
+
   const posts = await sanityClient.fetch(query);
 
   const paths = posts.map((post: Post) => ({
-    params: {
-      slug: post.slug.current
-    },
+    params: { slug: post.slug.current },
   }));
 
   return {
@@ -39,38 +38,34 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticprops: GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   const query = `*[_type == "post" && slug.current == $slug][0]{
-    _id,
-    _createdAt,
-    title,
-    author-> {
-      name,
-      image,
-    },
-    "comments": *[
-      _type == "comment" &&
-      post._ref == ^._id &&
-      approved == true],
-    description,
-    mainImage,
-    slug,
-    body
-  }`;
+        _id,
+        _createdAt,
+        title,
+        author->{
+            name,
+            image
+        },
+        'comments':*[_type=="comment" && post._ref==^._id && approved==true],
+        description, 
+        mainImage, 
+        slug, 
+        body
+    }`;
 
-  const post = await sanityClient.fetch(query, {
-    slug: params?.slug,
-  });
+  const post = await sanityClient.fetch(query, { slug: params?.slug });
 
-  if(!post){
+  if (!post) {
     return {
-      notFound: true
-    }
+      notFound: true,
+    };
   }
+
   return {
     props: {
       post,
     },
     revalidate: 60,
-  }
+  };
 };
