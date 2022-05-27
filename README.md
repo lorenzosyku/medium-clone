@@ -1,15 +1,23 @@
-# Next.js + Tailwind CSS + Sanity CMS
+## Medium Clone
+![alt text](./images/demo.png) 
+![alt text](./images/secdemo.png) 
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
-In this project I use ISG to serve dynamic like pages as if they were static pages. As a content menagment system I used Sanity and as a query language I used GROQ.
 
-## Preview
+## Built With
 
-[<img height="320px" style="margin: 5px" src="https://cloudflare-ipfs.com/ipfs/QmSirokA2QjGBBvUfYGf5qZfGAiL7M1YpVnvgvxZQHG7Gq/0.png">](https://medium-clone-sigma.vercel.app/)
+- [NextJS](https://nextjs.org/) - The React Framework
+  for Production.
+  - Authentication flow with Twitter API using NextAuth
+  - Server Side Rendering
+  - Create API backend endpoints
+- [TailwindCSS 3](https://tailwindcss.com/) - Rapidly build modern websites without ever leaving your HTML
+- [TypeScript](https://www.typescriptlang.org/) - TypeScript is JavaScript with syntax for types.
+  Intuitive SDKs and widgets for developers.
+- [Sanity](https://www.sanity.io/) - Sanity.io is the unified content platform that powers better digital experiences.
+  - Query data using GROQ query language
+  - Add data to Sanity CMS Backend from the frontend using Mutations
+  - Ability to BAN a tweet via the Sanity Platform
 
-## Deployed with Vercel
+  <br>
 
-Deployed the build using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
-
+---
