@@ -7,9 +7,7 @@
 
 - [NextJS](https://nextjs.org/) - The React Framework
   for Production.
-  - Authentication flow with Twitter API using NextAuth
   - Server Side Rendering
-  - Create API backend endpoints
 - [TailwindCSS 3](https://tailwindcss.com/) - Rapidly build modern websites without ever leaving your HTML
 - [TypeScript](https://www.typescriptlang.org/) - TypeScript is JavaScript with syntax for types.
   Intuitive SDKs and widgets for developers.
